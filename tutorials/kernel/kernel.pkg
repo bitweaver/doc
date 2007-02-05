@@ -1,0 +1,32 @@
+<refentry id="{@id}">
+ <refnamediv>
+  <refname>bitweaver kernel Documentation</refname>
+  <refpurpose>The bitweaver Kernel is the mandatory component which processes all requests. The Kernel uses installed Packages as required.</refpurpose>
+ </refnamediv>
+ <refsynopsisdiv>
+  <author>
+   Lester Caine
+   <authorblurb>
+    {@link mailto:lester@lsces.co.uk eMail to Lester}
+   </authorblurb>
+  </author>
+ </refsynopsisdiv>
+ <refsect1 id="{@id intro}">
+  <title>Introduction</title>
+  <para>The bitweaver Kernel is focused on scalability for both feature depth and speed. Some sites may want a lot of features, and others want less features a more speed because of traffic demands. The Kernel is intended to be scalable, much like the Linux kernel, where new functionality can be added or removed where desired. Unused functionality should not even be parsed.</para>
+  <para>The kernel makes use of a flexible and efficient Object Oriented design, that makes much greater use of inheritance (extends) than the originial TikiWiki. This reduces code and makes extending Tiki infastructure for your own specialized purposes much easier.</para>
+ </refsect1>
+ <refsect1 id="{@id references}">
+  <title>References for learning how to use bitweaver kernel</title>
+  <para>
+   <itemizedlist>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/KernelPackage bitweaver wiki - KernelPackage}
+	 </para>
+	</listitem>
+   </itemizedlist>
+  </para>
+ </refsect1>
+</refentry>
+

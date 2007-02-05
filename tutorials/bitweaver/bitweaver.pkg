@@ -1,0 +1,38 @@
+<refentry id="{@id}">
+ <refnamediv>
+  <refname>bitweaver Documentation</refname>
+  <refpurpose>bitweaver is an advanced, Open Source, Object Oriented, Content Management System (CMS) and Web Application Framework written in PHP. We use Smarty Templates and ADOdb to support many databases.</refpurpose>
+ </refnamediv>
+ <refsynopsisdiv>
+  <author>
+   Lester Caine
+   <authorblurb>
+    {@link mailto:lester@lsces.co.uk eMail to Lester}
+   </authorblurb>
+  </author>
+ </refsynopsisdiv>
+ <refsect1 id="{@id intro}">
+  <title>Release 1.2.0</title>
+  <para>Recently a moderate security flaw in bitweaver has been uncovered. This release should patch up these problems and we therefore recommend you upgrade your version of bitweaver to version 1.2 as soon as possible. As usual, you can find upgrade instructions on our bitweaverUpgrade page.</para>
+  <para>In addition to the secruty fixes, we include the greatly anticipated ArticlesPackage, which allows you to announce important events and news easily and effectively.</para>
+ </refsect1>
+ <refsect1 id="{@id download}">
+  <title> Download bitweaver</title>
+  <para>Now that you know something about the background of bitweaver, we're sure you're itching to give it a shot. Give our demo site a try or just go ahead and download and install it right away! Visit bitweaverRequirements for information on the server requirements.</para>
+  <para>The latest and greatest is ReleaseOne. If you should need help with bitweaver or further documentation, please visit the bitweaver Documentation Project.</para>
+  <para>{@link http://sourceforge.net/project/showfiles.php?group_id=141358&release_id=336854, bitweaver Download}</para>
+ </refsect1>
+ <refsect1 id="{@id references}">
+  <title>References for learning how to use bitweaver</title>
+  <para>
+   <itemizedlist>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/ bitweaver}
+	 </para>
+	</listitem>
+   </itemizedlist>
+  </para>
+ </refsect1>
+</refentry>
+

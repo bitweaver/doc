@@ -1,0 +1,58 @@
+<refentry id="{@id}">
+ <refnamediv>
+  <refname>bitweaver liberty Documentation</refname>
+  <refpurpose>The Liberty CMS package allows wiki, blogs, articles, and more to store their data in the same table, called tiki_content.</refpurpose>
+ </refnamediv>
+ <refsynopsisdiv>
+  <author>
+   Lester Caine
+   <authorblurb>
+    {@link mailto:lester@lsces.co.uk eMail to Lester}
+   </authorblurb>
+  </author>
+ </refsynopsisdiv>
+ <refsect1 id="{@id intro}">
+  <title>Introduction</title>
+  <para>A new feature for ReleaseOne, the Liberty CMS package allows wiki, blogs, articles, and more to store their data in the same table, called tiki_content. This table holds the text data for all content - blogs, wiki, articles, etc. all in one column. This permits super fast searching, as well as simplified data storage/retrieval and text processing via a common base class.</para>
+  <para>A format plugin mechanism permits the text to be of varying syntax types (TikiWiki, HTML, BBCode, Wikipedia (aka MediaWiki), XML, text, etc...).</para>
+ </refsect1>
+ <refsect1 id="{@id attach}">
+  <title>LibertyAttachments</title>
+  <para>LibertyAttachments is a mechanism for attaching *any* id based mechanism to any LibertyPackage-derived content (wiki, blogs).</para>
+  <para>The tiki_attachments table is an abstraction to the actual file location. This permits one to use the local file system (tiki_files) or database binary objects (tiki_blobs), tables from other 3rd party application ( like a g_id from gallery2 ), or even links to other websites such as pbase or lulu. LibertyAttachable extended objects use the public methods to have a "black box" for attaching data, and the actual location is dependent on the attachment plugin.</para>
+  <para>All functionality is in the LibertyPackage package. There is a LibertyAttachable class that handles all storing and retrieving of attachment data. Currently, there are plugins for Lulu, PBase and uploads via tiki_files. Future support (blobs, gallery2, etc.) will depend on community support and developer interest.</para>
+ </refsect1>
+ <refsect1 id="{@id formats}">
+  <title>LibertyFormats</title>
+  <para>A plugin can be defined to allow and process data in a certain format. The formats can be enabled by an administrator on the Liberty>Plugins page.</para>
+  <para>Available formats:
+   <itemizedlist>
+    <listitem><para>Tiki Wiki format is the default</para></listitem>
+    <listitem><para>HTML format</para></listitem>
+    <listitem><para>PEAR Text_Wiki</para></listitem>
+   </itemizedlist>Common tags: since some tags do more than just make it easy to edit text, we want to allow the usage of specific tags in any plugin. these include:</para>
+ </refsect1>
+ <refsect1 id="{@id references}">
+  <title>References for learning how to use bitweaver liberty</title>
+  <para>
+   <itemizedlist>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/LibertyPackage bitweaver wiki - LibertyPackage}
+	 </para>
+	</listitem>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/LibertyAttachements bitweaver wiki - LibertyAttachments}
+	 </para>
+	</listitem>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/LibertyFormats bitweaver wiki - LibertyFormats}
+	 </para>
+	</listitem>
+   </itemizedlist>
+  </para>
+ </refsect1>
+</refentry>
+
