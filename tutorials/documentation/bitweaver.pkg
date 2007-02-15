@@ -7,19 +7,21 @@
   <author>
    Lester Caine
    <authorblurb>
-    {@link mailto:lester@lsces.co.uk lester@lsces.co.uk}
+    {@link mailto:lester@lsces.co.uk eMail to Lester}
    </authorblurb>
   </author>
  </refsynopsisdiv>
  <refsect1 id="{@id intro}">
-  <title>Release 1.0.3</title>
-  <para>for anyone using 1.0.2, this is a security and HTML in tikiwiki format parser fix. HTML in the tikiwiki format parser is now optional and purges any unwanted HTML. please view ReleaseOneChangelog.</para>
+  <title>Release 2.0 Beta</title>
+  <para>Many of us are using R2 already for production sites. It is quite stable and packed with new features. We are always looking for help with just about everything - code, site documentation, theming/graphics and more. If you would like to GetInvolved, please don't be shy.</para>
+  <para>Yes, it should upgrade well. The only known issue is comments and the new materialized path structure.</para>
+<para>What does Alpha mean, and not mean? It means we have put a schema lock on database changes. However, we have not branched to R2 yet, so there might be some if a good argument is made for them. Keep an eye on the SchemaChangelog if you start using R2 heavily.</para>
  </refsect1>
  <refsect1 id="{@id download}">
   <title> Download bitweaver</title>
   <para>Now that you know something about the background of bitweaver, we're sure you're itching to give it a shot. Give our demo site a try or just go ahead and download and install it right away! Visit bitweaverRequirements for information on the server requirements.</para>
   <para>The latest and greatest is ReleaseOne. If you should need help with bitweaver or further documentation, please visit the bitweaver Documentation Project.</para>
-  <para>bitweaver - {@link http://www.bitweaver.org/wiki/}</para>
+  <para>{@link http://www.bitweaver.org/builds/bitweaver_R2_beta.zip, bitweaver Download}</para>
  </refsect1>
  <refsect1 id="{@id references}">
   <title>References for learning how to use bitweaver</title>
@@ -27,11 +29,10 @@
    <itemizedlist>
     <listitem>
 	 <para>
-	  bitweaver - {@link http://www.bitweaver.org/wiki/}
+	  {@link http://www.bitweaver.org/wiki/ bitweaver}
 	 </para>
 	</listitem>
    </itemizedlist>
   </para>
  </refsect1>
 </refentry>
-
