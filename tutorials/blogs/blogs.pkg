@@ -1,7 +1,7 @@
 <refentry id="{@id}">
  <refnamediv>
-  <refname>bitweaver package Documentation - articles</refname>
-  <refpurpose>The articles package provides content as a news style service.</refpurpose>
+  <refname>bitweaver package Documentation - blogs</refname>
+  <refpurpose>The blogs package provides content as a rolling diary service.</refpurpose>
  </refnamediv>
  <refsynopsisdiv>
   <author>
@@ -21,7 +21,7 @@
    <itemizedlist>
     <listitem>
 	 <para>
-	  {@link http://www.bitweaver.org/wiki/ArticlesPackage bitweaver wiki - ArticlesPackage}
+	  {@link http://www.bitweaver.org/wiki/BlogsPackage bitweaver wiki - BlogsPackage}
 	 </para>
 	</listitem>
    </itemizedlist>

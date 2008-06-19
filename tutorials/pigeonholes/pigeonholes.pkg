@@ -1,7 +1,7 @@
 <refentry id="{@id}">
  <refnamediv>
-  <refname>bitweaver package Documentation - articles</refname>
-  <refpurpose>The articles package provides content as a news style service.</refpurpose>
+  <refname>bitweaver package Documentation - pigeonholes</refname>
+  <refpurpose>The pigeonholes package is one of several methods of grouping content in bitweaver.</refpurpose>
  </refnamediv>
  <refsynopsisdiv>
   <author>
@@ -13,7 +13,7 @@
  </refsynopsisdiv>
  <refsect1 id="{@id intro}">
   <title>Introduction</title>
-  <para>Dummy link to bitweaver online documentation.</para>
+  <para>Dummy link to bitweaver online documentation for pigeonholes.</para>
  </refsect1>
  <refsect1 id="{@id references}">
   <title>References for package</title>
@@ -21,7 +21,7 @@
    <itemizedlist>
     <listitem>
 	 <para>
-	  {@link http://www.bitweaver.org/wiki/ArticlesPackage bitweaver wiki - ArticlesPackage}
+	  {@link http://www.bitweaver.org/wiki/PigeonholesPackage bitweaver wiki - PigeonholesPackage}
 	 </para>
 	</listitem>
    </itemizedlist>

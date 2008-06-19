@@ -1,7 +1,7 @@
 <refentry id="{@id}">
  <refnamediv>
-  <refname>bitweaver package Documentation - articles</refname>
-  <refpurpose>The articles package provides content as a news style service.</refpurpose>
+  <refname>bitweaver package Documentation - gmap</refname>
+  <refpurpose>The gmap package is one of the map handling facilities in bitweaver.</refpurpose>
  </refnamediv>
  <refsynopsisdiv>
   <author>
@@ -13,7 +13,8 @@
  </refsynopsisdiv>
  <refsect1 id="{@id intro}">
   <title>Introduction</title>
-  <para>Dummy link to bitweaver online documentation.</para>
+  <para>Dummy link to bitweaver online documentation for gmap.</para>
+  <para>Gmap is based on the Googles Maps API.</para>
  </refsect1>
  <refsect1 id="{@id references}">
   <title>References for package</title>
@@ -21,7 +22,7 @@
    <itemizedlist>
     <listitem>
 	 <para>
-	  {@link http://www.bitweaver.org/wiki/ArticlesPackage bitweaver wiki - ArticlesPackage}
+	  {@link http://www.bitweaver.org/wiki/GmapPackage bitweaver wiki - GmapPackage}
 	 </para>
 	</listitem>
    </itemizedlist>
