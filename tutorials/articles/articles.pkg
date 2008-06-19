@@ -1,0 +1,31 @@
+<refentry id="{@id}">
+ <refnamediv>
+  <refname>bitweaver package Documentation</refname>
+  <refpurpose>The bitweaver Kernel is the mandatory component which processes all requests. The Kernel uses installed Packages as required.</refpurpose>
+ </refnamediv>
+ <refsynopsisdiv>
+  <author>
+   Lester Caine
+   <authorblurb>
+    {@link mailto:lester@lsces.co.uk eMail to Lester}
+   </authorblurb>
+  </author>
+ </refsynopsisdiv>
+ <refsect1 id="{@id intro}">
+  <title>Introduction</title>
+  <para>Dummy link to bitweaver online documentation.</para>
+ </refsect1>
+ <refsect1 id="{@id references}">
+  <title>References for package</title>
+  <para>
+   <itemizedlist>
+    <listitem>
+	 <para>
+	  {@link http://www.bitweaver.org/wiki/ArticlesPackage bitweaver wiki - ArticlesPackage}
+	 </para>
+	</listitem>
+   </itemizedlist>
+  </para>
+ </refsect1>
+</refentry>
+
