@@ -1,0 +1,6454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: /cvsroot/bitweaver/_bit_doc/database/core.xml,v 1.1 2008/10/17 19:42:25 squareing Exp $ -->
+
+<book id="database.core" xreflabel="core database schema"><title>core Model</title>
+
+
+
+
+  <chapter id="public.schema"
+           xreflabel="public">
+    <title>Schema public</title>
+    <para>Standard public schema</para>
+
+
+      <section id="public.table.adodb-logsql"
+               xreflabel="public.adodb_logsql">
+        <title id="public.table.adodb-logsql-title">
+         Table:
+         
+         <structname>adodb_logsql</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>adodb_logsql</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>created</structfield></term>
+              <listitem><para>
+                <type>timestamp without time zone</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>sql0</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>sql1</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>params</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>tracer</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>timer</structfield></term>
+              <listitem><para>
+                <type>numeric(16,6)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.i18n-content-trans-map"
+               xreflabel="public.i18n_content_trans_map">
+        <title id="public.table.i18n-content-trans-map-title">
+         Table:
+         
+         <structname>i18n_content_trans_map</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>i18n_content_trans_map</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>translation_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.i18n-languages"
+               xreflabel="public.i18n_languages">
+        <title id="public.table.i18n-languages-title">
+         Table:
+         
+         <structname>i18n_languages</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>i18n_languages</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>lang_code</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>native_name</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>english_name</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>is_disabled</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>right_to_left</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.i18n-masters"
+               xreflabel="public.i18n_masters">
+        <title id="public.table.i18n-masters-title">
+         Table:
+         
+         <structname>i18n_masters</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>i18n_masters</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>source_hash</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>package</structfield></term>
+              <listitem><para>
+                <type>character varying(100)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>created</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>source</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on i18n_masters</title>
+
+          <varlistentry>
+            <term>i18n_masters_created_idx</term>
+            <listitem><para>created</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>i18n_masters_pkg_idx</term>
+            <listitem><para>package</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.i18n-strings"
+               xreflabel="public.i18n_strings">
+        <title id="public.table.i18n-strings-title">
+         Table:
+         
+         <structname>i18n_strings</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>i18n_strings</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>source_hash</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>lang_code</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_modified</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>trans</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on i18n_strings</title>
+
+          <varlistentry>
+            <term>i18n_strings_lang_idx</term>
+            <listitem><para>source_hash</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>i18n_strings_modif_idx</term>
+            <listitem><para>last_modified</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.i18n-version-map"
+               xreflabel="public.i18n_version_map">
+        <title id="public.table.i18n-version-map-title">
+         Table:
+         
+         <structname>i18n_version_map</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>i18n_version_map</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>source_hash</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>version</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on i18n_version_map</title>
+
+          <varlistentry>
+            <term>i18n_version_src_idx</term>
+            <listitem><para>source_hash</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>i18n_version_ver_idx</term>
+            <listitem><para>version</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.kernel-config"
+               xreflabel="public.kernel_config">
+        <title id="public.table.kernel-config-title">
+         Table:
+         
+         <structname>kernel_config</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>kernel_config</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>config_name</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>package</structfield></term>
+              <listitem><para>
+                <type>character varying(100)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>config_value</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-action-log"
+               xreflabel="public.liberty_action_log">
+        <title id="public.table.liberty-action-log-title">
+         Table:
+         
+         <structname>liberty_action_log</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_action_log</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_modified</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(160)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>ip</structfield></term>
+              <listitem><para>
+                <type>character varying(15)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>log_message</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT &apos;&apos;::character varying</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>error_message</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT &apos;&apos;::character varying</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-aliases"
+               xreflabel="public.liberty_aliases">
+        <title id="public.table.liberty-aliases-title">
+         Table:
+         
+         <structname>liberty_aliases</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_aliases</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>alias_title</structfield></term>
+              <listitem><para>
+                <type>character varying(190)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_aliases</title>
+
+          <varlistentry>
+            <term>content_alias_title_idx</term>
+            <listitem><para>alias_title</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-attachment-meta-data"
+               xreflabel="public.liberty_attachment_meta_data">
+        <title id="public.table.liberty-attachment-meta-data-title">
+         Table:
+         
+         <structname>liberty_attachment_meta_data</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_attachment_meta_data</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-attachments"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>meta_type_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-meta-types"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>meta_title_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-meta-titles"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>meta_value</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_attachment_meta_data</title>
+
+          <varlistentry>
+            <term>lib_attachment_meta_idx</term>
+            <listitem><para>attachment_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>lib_attachment_meta_title_idx</term>
+            <listitem><para>meta_title_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>lib_attachment_meta_type_idx</term>
+            <listitem><para>meta_type_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-attachment-prefs"
+               xreflabel="public.liberty_attachment_prefs">
+        <title id="public.table.liberty-attachment-prefs-title">
+         Table:
+         
+         <structname>liberty_attachment_prefs</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_attachment_prefs</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-attachments"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pref_name</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pref_value</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-attachments"
+               xreflabel="public.liberty_attachments">
+        <title id="public.table.liberty-attachments-title">
+         Table:
+         
+         <structname>liberty_attachments</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_attachments</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>attachment_plugin_guid</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>foreign_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>is_primary</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pos</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>hits</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>error_code</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>caption</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_attachments</title>
+
+          <varlistentry>
+            <term>attachments_hits_idx</term>
+            <listitem><para>hits</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>attachments_user_id_idx</term>
+            <listitem><para>user_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_attachment_meta_data via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-attachment-meta-data"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-attachment-prefs"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-users"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-comments"
+               xreflabel="public.liberty_comments">
+        <title id="public.table.liberty-comments-title">
+         Table:
+         
+         <structname>liberty_comments</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_comments</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>comment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>parent_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>root_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>thread_forward_sequence</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>thread_reverse_sequence</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>anon_name</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_comments</title>
+
+          <varlistentry>
+            <term>comments_object_idx</term>
+            <listitem><para>content_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>comments_parent_idx</term>
+            <listitem><para>parent_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content"
+               xreflabel="public.liberty_content">
+        <title id="public.table.liberty-content-title">
+         Table:
+         
+         <structname>liberty_content</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>modifier_user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>created</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_modified</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_type_guid</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content-types"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>format_guid</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_status_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content-status"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>event_time</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>version</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>lang_code</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(160)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>ip</structfield></term>
+              <listitem><para>
+                <type>character varying(39)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_content</title>
+
+          <varlistentry>
+            <term>content_moduser_idx</term>
+            <listitem><para>modifier_user_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>content_status_idx</term>
+            <listitem><para>content_status_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>content_title_idx</term>
+            <listitem><para>title</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>content_user_idx</term>
+            <listitem><para>user_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing i18n_content_trans_map via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.i18n-content-trans-map"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-aliases"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-attachments"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-comments"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-data"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-history"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-hits"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-links"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-permissions"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-prefs"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-process-queue"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-favorites-map"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-users"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-data"
+               xreflabel="public.liberty_content_data">
+        <title id="public.table.liberty-content-data-title">
+         Table:
+         
+         <structname>liberty_content_data</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_data</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data_type</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-history"
+               xreflabel="public.liberty_content_history">
+        <title id="public.table.liberty-content-history-title">
+         Table:
+         
+         <structname>liberty_content_history</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_history</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>version</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_modified</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>format_guid</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>summary</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>ip</structfield></term>
+              <listitem><para>
+                <type>character varying(15)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>history_comment</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-hits"
+               xreflabel="public.liberty_content_hits">
+        <title id="public.table.liberty-content-hits-title">
+         Table:
+         
+         <structname>liberty_content_hits</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_hits</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>hits</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT 1</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_hit</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT 1</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_content_hits</title>
+
+          <varlistentry>
+            <term>content_content_hits_idx</term>
+            <listitem><para>content_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-links"
+               xreflabel="public.liberty_content_links">
+        <title id="public.table.liberty-content-links-title">
+         Table:
+         
+         <structname>liberty_content_links</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_links</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>from_content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>to_content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>to_title</structfield></term>
+              <listitem><para>
+                <type>character varying(160)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pos</structfield></term>
+              <listitem><para>
+                <type>double precision</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_content_links</title>
+
+          <varlistentry>
+            <term>links_from_content_id_idx</term>
+            <listitem><para>from_content_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>links_title_content_id_idx</term>
+            <listitem><para>to_title</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>to_content_id_idx</term>
+            <listitem><para>to_content_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-permissions"
+               xreflabel="public.liberty_content_permissions">
+        <title id="public.table.liberty-content-permissions-title">
+         Table:
+         
+         <structname>liberty_content_permissions</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_permissions</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>group_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-groups"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>perm_name</structfield></term>
+              <listitem><para>
+                <type>character varying(30)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>is_revoked</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_content_permissions</title>
+
+          <varlistentry>
+            <term>liberty_content_perm_cont_idx</term>
+            <listitem><para>content_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>liberty_content_perm_group_idx</term>
+            <listitem><para>group_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>liberty_content_perm_perm_idx</term>
+            <listitem><para>perm_name</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-prefs"
+               xreflabel="public.liberty_content_prefs">
+        <title id="public.table.liberty-content-prefs-title">
+         Table:
+         
+         <structname>liberty_content_prefs</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_prefs</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pref_name</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pref_value</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-status"
+               xreflabel="public.liberty_content_status">
+        <title id="public.table.liberty-content-status-title">
+         Table:
+         
+         <structname>liberty_content_status</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_status</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_status_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_status_name</structfield></term>
+              <listitem><para>
+                <type>character varying(128)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_content via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-content-types"
+               xreflabel="public.liberty_content_types">
+        <title id="public.table.liberty-content-types-title">
+         Table:
+         
+         <structname>liberty_content_types</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_content_types</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>content_type_guid</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_description</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>maintainer_url</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>handler_class</structfield></term>
+              <listitem><para>
+                <type>character varying(128)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>handler_package</structfield></term>
+              <listitem><para>
+                <type>character varying(128)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>handler_file</structfield></term>
+              <listitem><para>
+                <type>character varying(128)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_content via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-copyrights"
+               xreflabel="public.liberty_copyrights">
+        <title id="public.table.liberty-copyrights-title">
+         Table:
+         
+         <structname>liberty_copyrights</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_copyrights</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>copyright_id</structfield></term>
+              <listitem><para>
+                <type>serial</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>page_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>copyright_year</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>authors</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>copyright_order</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-dynamic-variables"
+               xreflabel="public.liberty_dynamic_variables">
+        <title id="public.table.liberty-dynamic-variables-title">
+         Table:
+         
+         <structname>liberty_dynamic_variables</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_dynamic_variables</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>name</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-files"
+               xreflabel="public.liberty_files">
+        <title id="public.table.liberty-files-title">
+         Table:
+         
+         <structname>liberty_files</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_files</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>file_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>storage_path</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>file_size</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>mime_type</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-link-cache"
+               xreflabel="public.liberty_link_cache">
+        <title id="public.table.liberty-link-cache-title">
+         Table:
+         
+         <structname>liberty_link_cache</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_link_cache</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>cache_id</structfield></term>
+              <listitem><para>
+                <type>serial</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>url</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>bytea</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>refresh</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-meta-titles"
+               xreflabel="public.liberty_meta_titles">
+        <title id="public.table.liberty-meta-titles-title">
+         Table:
+         
+         <structname>liberty_meta_titles</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_meta_titles</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>meta_title_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>meta_title</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_attachment_meta_data via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-attachment-meta-data"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-meta-types"
+               xreflabel="public.liberty_meta_types">
+        <title id="public.table.liberty-meta-types-title">
+         Table:
+         
+         <structname>liberty_meta_types</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_meta_types</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>meta_type_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>meta_type</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_attachment_meta_data via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-attachment-meta-data"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-process-queue"
+               xreflabel="public.liberty_process_queue">
+        <title id="public.table.liberty-process-queue-title">
+         Table:
+         
+         <structname>liberty_process_queue</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_process_queue</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>process_id</structfield></term>
+              <listitem><para>
+                <type>serial</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>queue_date</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>begin_date</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>end_date</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>process_status</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>log_message</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>processor</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>processor_parameters</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_process_queue</title>
+
+          <varlistentry>
+            <term>process_id_idx</term>
+            <listitem><para>content_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.liberty-structures"
+               xreflabel="public.liberty_structures">
+        <title id="public.table.liberty-structures-title">
+         Table:
+         
+         <structname>liberty_structures</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>liberty_structures</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>structure_id</structfield></term>
+              <listitem><para>
+                <type>serial</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>root_structure_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>structure_level</structfield></term>
+              <listitem><para>
+                <type>smallint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT 1</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pos</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>page_alias</structfield></term>
+              <listitem><para>
+                <type>character varying(240)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>parent_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on liberty_structures</title>
+
+          <varlistentry>
+            <term>structures_content_idx</term>
+            <listitem><para>content_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>structures_parent_idx</term>
+            <listitem><para>parent_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>structures_root_idx</term>
+            <listitem><para>root_structure_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.mail-notifications"
+               xreflabel="public.mail_notifications">
+        <title id="public.table.mail-notifications-title">
+         Table:
+         
+         <structname>mail_notifications</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>mail_notifications</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>event</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>object</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>email</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.sessions"
+               xreflabel="public.sessions">
+        <title id="public.table.sessions-title">
+         Table:
+         
+         <structname>sessions</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>sessions</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>sesskey</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>expiry</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>expireref</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>session_data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.themes-custom-modules"
+               xreflabel="public.themes_custom_modules">
+        <title id="public.table.themes-custom-modules-title">
+         Table:
+         
+         <structname>themes_custom_modules</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>themes_custom_modules</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>name</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>data</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.themes-layouts"
+               xreflabel="public.themes_layouts">
+        <title id="public.table.themes-layouts-title">
+         Table:
+         
+         <structname>themes_layouts</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>themes_layouts</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>module_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>layout</structfield></term>
+              <listitem><para>
+                <type>character varying(160)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT &apos;kernel&apos;::character varying</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>layout_area</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>module_rows</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>module_rsrc</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>params</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>cache_time</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>groups</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pos</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+                <literal>DEFAULT 1</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on themes_layouts</title>
+
+          <varlistentry>
+            <term>themes_layouts_module_idx</term>
+            <listitem><para>module_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-cnxn"
+               xreflabel="public.users_cnxn">
+        <title id="public.table.users-cnxn-title">
+         Table:
+         
+         <structname>users_cnxn</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_cnxn</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-users"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>cookie</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>ip</structfield></term>
+              <listitem><para>
+                <type>character varying(16)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_get</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>connect_time</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>get_count</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_agent</structfield></term>
+              <listitem><para>
+                <type>character varying(128)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>assume_user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>current_view</structfield></term>
+              <listitem><para>
+                <type>text</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-favorites-map"
+               xreflabel="public.users_favorites_map">
+        <title id="public.table.users-favorites-map-title">
+         Table:
+         
+         <structname>users_favorites_map</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_favorites_map</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>favorite_content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-users"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>map_position</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on users_favorites_map</title>
+
+          <varlistentry>
+            <term>users_fav_con_idx</term>
+            <listitem><para>favorite_content_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>users_fav_user_idx</term>
+            <listitem><para>user_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-group-permissions"
+               xreflabel="public.users_group_permissions">
+        <title id="public.table.users-group-permissions-title">
+         Table:
+         
+         <structname>users_group_permissions</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_group_permissions</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>group_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-groups"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>perm_name</structfield></term>
+              <listitem><para>
+                <type>character varying(30)</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-permissions"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>perm_value</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+                <literal>DEFAULT &apos;&apos;::character varying</literal>
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on users_group_permissions</title>
+
+          <varlistentry>
+            <term>users_group_perm_group_idx</term>
+            <listitem><para>group_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>users_group_perm_perm_idx</term>
+            <listitem><para>perm_name</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-groups"
+               xreflabel="public.users_groups">
+        <title id="public.table.users-groups-title">
+         Table:
+         
+         <structname>users_groups</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_groups</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>group_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-users"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>group_name</structfield></term>
+              <listitem><para>
+                <type>character varying(30)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>is_default</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>group_desc</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>group_home</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>is_public</structfield></term>
+              <listitem><para>
+                <type>character varying(1)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>after_registration_page</structfield></term>
+              <listitem><para>
+                <type>character varying(255)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on users_groups</title>
+
+          <varlistentry>
+            <term>users_groups_user_idx</term>
+            <listitem><para>user_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing liberty_content_permissions via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.liberty-content-permissions"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-group-permissions"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-groups-map"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-groups-map"
+               xreflabel="public.users_groups_map">
+        <title id="public.table.users-groups-map-title">
+         Table:
+         
+         <structname>users_groups_map</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_groups_map</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-users"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>group_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-groups"/>
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on users_groups_map</title>
+
+          <varlistentry>
+            <term>users_groups_map_group_idx</term>
+            <listitem><para>group_id</para></listitem>
+          </varlistentry>
+
+
+
+          <varlistentry>
+            <term>users_groups_map_user_idx</term>
+            <listitem><para>user_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-permissions"
+               xreflabel="public.users_permissions">
+        <title id="public.table.users-permissions-title">
+         Table:
+         
+         <structname>users_permissions</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_permissions</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>perm_name</structfield></term>
+              <listitem><para>
+                <type>character varying(30)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>perm_desc</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>perm_level</structfield></term>
+              <listitem><para>
+                <type>character varying(80)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>package</structfield></term>
+              <listitem><para>
+                <type>character varying(100)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing users_group_permissions via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-group-permissions"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-semaphores"
+               xreflabel="public.users_semaphores">
+        <title id="public.table.users-semaphores-title">
+         Table:
+         
+         <structname>users_semaphores</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_semaphores</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>sem_name</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>created</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-users"
+               xreflabel="public.users_users">
+        <title id="public.table.users-users-title">
+         Table:
+         
+         <structname>users_users</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_users</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>content_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-content"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>email</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>login</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>real_name</structfield></term>
+              <listitem><para>
+                <type>character varying(64)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>user_password</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>provpass</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>provpass_expires</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>default_group_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>last_login</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>current_login</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>registration_date</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+                <literal>NOT NULL</literal>
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>challenge</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>pass_due</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>hash</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>created</structfield></term>
+              <listitem><para>
+                <type>bigint</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>avatar_attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-attachments"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>portrait_attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-attachments"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>logo_attachment_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.liberty-attachments"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <variablelist>
+          <title>Indexes on users_users</title>
+
+          <varlistentry>
+            <term>users_users_avatar_atment_idx</term>
+            <listitem><para>avatar_attachment_id</para></listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+        <itemizedlist>
+          <title>
+            Tables referencing users_cnxn via Foreign Key Constraints
+          </title>
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-cnxn"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-favorites-map"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-groups"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-groups-map"/>
+            </para>
+          </listitem>
+
+
+
+          <listitem>
+            <para>
+              <xref linkend="public.table.users-watches"/>
+            </para>
+          </listitem>
+
+        </itemizedlist>
+
+
+
+
+
+
+      </para>
+    </section>
+
+      <section id="public.table.users-watches"
+               xreflabel="public.users_watches">
+        <title id="public.table.users-watches-title">
+         Table:
+         
+         <structname>users_watches</structname>
+        </title>
+ 
+
+
+        <para>
+          <variablelist>
+            <title>
+              Structure of <structname>users_watches</structname>
+            </title>
+
+
+            <varlistentry>
+              <term><structfield>user_id</structfield></term>
+              <listitem><para>
+                <type>integer</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <literal>REFERENCES</literal> <xref linkend="public.table.users-users"/>
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>event</structfield></term>
+              <listitem><para>
+                <type>character varying(40)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>object</structfield></term>
+              <listitem><para>
+                <type>character varying(120)</type>
+
+
+                <literal>PRIMARY KEY</literal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>hash</structfield></term>
+              <listitem><para>
+                <type>character varying(32)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>title</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>watch_type</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>url</structfield></term>
+              <listitem><para>
+                <type>character varying(250)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+            <varlistentry>
+              <term><structfield>email</structfield></term>
+              <listitem><para>
+                <type>character varying(200)</type>
+
+
+
+
+
+
+
+              </para>
+
+            </listitem>
+          </varlistentry>
+
+        </variablelist>
+
+
+
+
+
+
+
+
+
+
+      </para>
+    </section>
+
+
+
+  </chapter>
+
+</book>
+

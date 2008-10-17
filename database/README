@@ -1,0 +1,36 @@
+this output was generated using PostgreSQL Autodoc:
+http://www.rbt.ca/autodoc/index.html
+
+very cool tool that will generate an overview of a given database.
+
+install instructions:
+download it from the homepage and extract.
+./configure
+
+you might have to install things like dev-perl/HTML-Template before configure is happy.
+make
+
+optionally, you can run make install as well. once you have successfully made it, you can run it using
+./postgresql_autodoc --help
+
+
+recommended use:
+
+------------------------------------------------------------------------------------------
+#!/bin/sh
+db="$1"
+./postgresql_autodoc -d "$db" -f "$db" -l `pwd`
+
+mkdir -p "$db"
+mv $db.* "$db"
+cd "$db"
+
+echo "dot"
+dot -Tpng -o dot.png "$db.dot"
+
+echo "twopi"
+twopi -Tpng -o twopi.png -Goverlap=scale "$db.dot"
+twopi -Tpng -o twopi.png -Goverlap=false "$db.dot"
+------------------------------------------------------------------------------------------
+
+you can use other graphviz tools to visualise the .dot file such as neato or circo.
