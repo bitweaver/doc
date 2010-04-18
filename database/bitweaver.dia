@@ -14757,7 +14757,7 @@
 
         <dia:composite type="umlattribute">
           <dia:attribute name="name">
-            <dia:string>#  content_description#</dia:string>
+            <dia:string>#  content_name#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
             <dia:string>#character varying(250)#</dia:string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- $Header: /cvsroot/bitweaver/_bit_doc/database/bitweaver.xml,v 1.1 2008/10/17 19:42:25 squareing Exp $ -->
+<!-- $Header: /cvsroot/bitweaver/_bit_doc/database/bitweaver.xml,v 1.2 2010/04/18 02:33:04 wjames5 Exp $ -->
 
 <book id="database.bitweaver" xreflabel="bitweaver database schema"><title>bitweaver Model</title>
 
@@ -10005,7 +10005,7 @@
           </varlistentry>
 
             <varlistentry>
-              <term><structfield>content_description</structfield></term>
+              <term><structfield>content_name</structfield></term>
               <listitem><para>
                 <type>character varying(250)</type>
 
